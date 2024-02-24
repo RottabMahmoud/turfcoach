@@ -1,0 +1,265 @@
+.weather-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.weather-input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  flex: 1;
+  margin-right: 10px;
+}
+
+.weather-input::placeholder {
+  color: #999;
+}
+
+.weather-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.weather-button:hover {
+  background-color: #0056b3;
+}
+
+.weather-card {
+  background-color: #f0f0f0; /* Light gray background */
+  border-radius: 5px; /* Rounded corners */
+  padding: 15px; /* Padding for content */
+  margin: 10px; /* Margin for separation */
+
+  /* Optional box-shadow for some depth */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.weather-card h2 {
+  font-size: 20px; /* Larger font for city name */
+  margin-bottom: 5px; /* Add some space after the heading */
+}
+
+.weather-card p {
+  font-size: 16px; /* Default font size for information */
+  margin-bottom: 5px; /* Space between info lines */
+}
+
+/* Style units based on selected option */
+.weather-card p span {
+  font-weight: bold; /* Emphasize the units */
+  margin-left: 5px; /* Separate units visually */
+}
+/* Media Query for Mobile Screens */
+@media (max-width: 768px) {
+  .weather-card {
+    max-width: 100%;
+  }
+
+  .weather-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .weather-header p {
+    font-size: 1rem;
+  }
+
+  .weather-details {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Overall layout */
+.weather-info {
+  width: 600px; /* Adjust as needed */
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+}
+
+/* Current weather section */
+.current-weather {
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+/* Favorites section */
+.favorites {
+  border-top: 1px solid #ddd;
+  padding: 15px;
+}
+
+/* Unit selector section */
+.unit-selector {
+  margin: 1em;
+}
+
+/* Typography */
+h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Weather card */
+.weather-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* City image */
+.city-image {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.city-image img {
+  width: 600px;
+  height: 600px;
+}
+
+/* Favorites list */
+.favorites ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.favorites li {
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Button styles */
+.add-favorite-btn,
+.remove-favorite-btn {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  margin-left: 1em;
+}
+.remove-favorite-btn {
+  background-color: red;
+  color: white;
+  margin-left: 1em;
+  border-radius: 1em;
+}
+.add-favorite-btn {
+  background-color: blue;
+  color: white;
+  border-radius: 1em;
+}
+.add-favorite-btn:hover,
+.remove-favorite-btn:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Additional styles */
+.unit-selector select {
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+/* Media queries for different screen sizes */
+
+@media only screen and (max-width: 768px) {
+  /* Overall layout adjustments */
+  .weather-info {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(300px, 1fr)
+    ); /* Adjust minmax values as needed */
+  }
+
+  /* Weather card and city image adjustments */
+  .weather-card,
+  .city-image {
+    margin-bottom: 10px; /* Reduce margin on smaller screens */
+  }
+
+  /* Favorites and unit selector adjustments */
+  .favorites,
+  .unit-selector {
+    margin-top: 15px; /* Add some margin for separation */
+  }
+
+  /* Unit selector text alignment */
+  .unit-selector {
+    text-align: left; /* Align text to left on mobile */
+  }
+
+  /* Buttons in favorites list */
+  .favorites li button {
+    font-size: 12px; /* Reduce font size for better fit */
+  }
+}
+
+/* Additional media queries for different mobile breakpoints (optional) */
+/* Media Query for Mobile and Smaller Screens */
+@media (max-width: 768px) {
+  .weather-card {
+    max-width: 100%;
+  }
+
+  .weather-card h2 {
+    font-size: 1.8rem;
+  }
+
+  .weather-card p {
+    font-size: 1.4rem;
+  }
+
+  .weather-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .weather-input {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+/* Media Query for Desktop and Larger Screens */
+@media (min-width: 769px) {
+  .weather-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .weather-input {
+    margin-right: 10px;
+    margin-bottom: 0;
+    flex: 1;
+  }
+
+  .weather-button {
+    flex-shrink: 0;
+  }
+}
