@@ -45,12 +45,12 @@ npm run build
 
 ```bash
   turfcoach
-    ├─ src                   ### root Folder
-    │  ├─ components         ### used to group all the project components
+    ├─ src                      ### root Folder
+    │  ├─ components            ### used to group all the project components
     │  │  ├─ CityImage.jsx      ### Our Extra Filters
-    │  │  ├─ WeatherCard.jsx       ### Our Header
-    │  │  ├─ WeatherForm.jsx       ### Images Pop Up
-    │  │  ├─ WeatherInfo.jsx  ### Our List of Items
+    │  │  ├─ WeatherCard.jsx    ### Our Weather Card
+    │  │  ├─ WeatherForm.jsx    ### Our Weather Form
+    │  │  ├─ WeatherInfo.jsx    ### Our Weather Information
     │  │─ App.jsx
     │  │─ main.jsx
     │  │─ styles.css
