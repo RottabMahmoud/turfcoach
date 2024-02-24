@@ -29,6 +29,12 @@ const WeatherCard = ({ weather, units }) => {
       : speed.toFixed(1) + " m/s";
   };
 
+  const convertCelsiusToFahrenheit = (degree, units) => {
+    return units === "imperial"
+      ? (degree * 1.8 + 32).toFixed(1) + " °F"
+      : degree.toFixed(1) + " °C";
+  };
+
   // Check if there is rain data available
   const hasRain = weather.rain && weather.rain["1h"];
 
@@ -45,8 +51,8 @@ const WeatherCard = ({ weather, units }) => {
         <div>
           {/* Display temperature with units based on selected system */}
           <p className="weather-detail">
-            Temperature: {weather.main.temp}{" "}
-            {units === "imperial" ? "°F" : "°C"}
+            Temperature: {convertCelsiusToFahrenheit(weather.main.temp, units)}{" "}
+            {/* {units === "imperial" ? "°F" : "°C"} */}
           </p>
           {/* Display humidity percentage */}
           <p className="weather-detail">Humidity: {weather.main.humidity}%</p>
