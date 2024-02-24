@@ -29,6 +29,12 @@ const WeatherCard = ({ weather, units }) => {
       : speed.toFixed(1) + " m/s";
   };
 
+  /**
+   * Function to convert weather temp from Celsius to FahrenHeit.
+   * @param {number} temp - Wind temp to convert.
+   * @param {string} units - Measurement units ("imperial" or "metric").
+   * @returns {string} - Weather Degree in the desired units.
+   */
   const convertCelsiusToFahrenheit = (degree, units) => {
     return units === "imperial"
       ? (degree * 1.8 + 32).toFixed(1) + " °F"
@@ -52,7 +58,6 @@ const WeatherCard = ({ weather, units }) => {
           {/* Display temperature with units based on selected system */}
           <p className="weather-detail">
             Temperature: {convertCelsiusToFahrenheit(weather.main.temp, units)}{" "}
-            {/* {units === "imperial" ? "°F" : "°C"} */}
           </p>
           {/* Display humidity percentage */}
           <p className="weather-detail">Humidity: {weather.main.humidity}%</p>
