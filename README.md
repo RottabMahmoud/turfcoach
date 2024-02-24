@@ -52,7 +52,6 @@ npm run build
     │  │  ├─ WeatherForm.jsx       ### Images Pop Up
     │  │  ├─ WeatherInfo.jsx  ### Our List of Items
     │  │─ App.jsx
-    │  │─ index.js
     │  │─ main.jsx
     │  │─ styles.css
     ├─ .eslintrc.cjs
