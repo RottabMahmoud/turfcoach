@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 /**
  * Component for a form to input a location for weather information.
@@ -16,9 +16,16 @@ const WeatherForm = ({ getWeather }) => {
    * @param {Object} e - Form submission event.
    */
   const handleSubmit = (e) => {
-    e.preventDefault();
-    getWeather(location);
-    setLocation("");
+    e.preventDefault(); // Prevents default form submission behavior
+    if (!location) {
+      // If location is empty, show an alert
+      alert("Please Enter a City Name");
+    } else {
+      // Call the getWeather function with the entered location
+      getWeather(location);
+      // Reset the input field after form submission
+      setLocation("");
+    }
   };
 
   // Render the weather form component
@@ -29,7 +36,7 @@ const WeatherForm = ({ getWeather }) => {
         type="text"
         placeholder="Enter city"
         value={location}
-        onChange={(e) => setLocation(e.target.value)}
+        onChange={(e) => setLocation(e.target.value)} // Update location state on input change
         className="weather-input"
       />
       {/* Button to submit form */}
