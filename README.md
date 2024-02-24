@@ -16,6 +16,7 @@
 ## Usage
 
 - Used React + Vite, to create/ spin the project.
+- In Mobile screens, just zoom out to get the full responsive design.
 
 ```bash
 npm create vite@latest ./ -- --template react
