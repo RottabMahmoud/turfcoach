@@ -26,7 +26,7 @@ const WeatherInfo = () => {
       const data = await response.json();
       setWeather(data);
     } catch (error) {
-      console.error("Error fetching weather:", error);
+      console.log("Error fetching weather:", error);
     }
   };
 
