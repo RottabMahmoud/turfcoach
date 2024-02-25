@@ -48,7 +48,7 @@ npm run build
   turfcoach
     ├─ src                      ### root Folder
     │  ├─ components            ### used to group all the project components
-    │  │  ├─ CityImage.jsx      ### Our Extra Filters
+    │  │  ├─ CityImage.jsx      ### Our City Image Component
     │  │  ├─ WeatherCard.jsx    ### Our Weather Card
     │  │  ├─ WeatherForm.jsx    ### Our Weather Form
     │  │  ├─ WeatherInfo.jsx    ### Our Weather Information
