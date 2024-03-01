@@ -75,18 +75,10 @@ const WeatherInfo = () => {
             {/* Weather actions section */}
             <div className="weather-actions">
               {/* Button to add current location to favorites */}
-              <button onClick={addToFavorites} className="add-favorite-btn">
+              <button onClick={addToFavorites} className="add-favorite-btn bg-blue-500 hover:bg-blue-700 text-white">
                 Add to Favorites
               </button>
-              {/* Button to remove current location from favorites */}
-              {favorites.includes(weather.name) && (
-                <button
-                  onClick={() => removeFromFavorites(weather.name)}
-                  className="remove-favorite-btn"
-                >
-                  Remove from Favorites
-                </button>
-              )}
+
               {/* Unit selector for temperature units */}
               <select
                 value={units}
@@ -128,8 +120,8 @@ const WeatherInfo = () => {
         </div>
       </div>
       {/* Display city image using CityImage component */}
-      <div className="w-1/2">
-        <CityImage city={weather.name} />
+      <div className="w-1/2 hidden sm:block">
+        {weather && <CityImage city={weather.name} />}
       </div>
     </div>
   );

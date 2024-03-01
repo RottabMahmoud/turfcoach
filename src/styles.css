@@ -1,7 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+body {
+  background-color: black;
+}
 .weather-form {
   display: flex;
   justify-content: center;
@@ -48,7 +50,7 @@
 }
 
 .weather-card h2 {
-  font-size: 20px; /* Larger font for city name */
+  font-size: 30px; /* Larger font for city name */
   margin-bottom: 5px; /* Add some space after the heading */
 }
 
@@ -93,7 +95,7 @@
 
 /* Current weather section */
 .current-weather {
-  background-color: #f5f5f5;
+  background-color: black;
   border-radius: 5px;
   padding: 20px;
 }
@@ -173,7 +175,7 @@ p {
   border-radius: 1em;
 }
 .add-favorite-btn {
-  background-color: blue;
+  /* background-color: blue; */
   color: white;
   border-radius: 1em;
 }

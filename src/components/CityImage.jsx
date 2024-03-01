@@ -38,13 +38,13 @@ const CityImage = ({ city }) => {
     };
 
     // Call the fetchImage function when the city prop changes
-    // fetchImage();
+    fetchImage();
   }, [city]);
 
   // Render the component with the city image if imageUrl is available
   return (
     <div style={{ maxWidth: "100%" }}>
-      {imageUrl && <img src="src\components\cairo.png" alt={city} style={imageStyle} />}
+      {imageUrl && <img src={imageUrl} alt={city} style={imageStyle} />}
     </div>
   );
 };

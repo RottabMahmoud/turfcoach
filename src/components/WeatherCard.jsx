@@ -46,28 +46,36 @@ const WeatherCard = ({ weather, units }) => {
 
   // Render the weather card component
   return (
-    <div className="weather-card">
+    <div className="weather-card bg-black">
       <div className="weather-header">
         {/* Display the location name */}
         <h2>{weather.name}</h2>
         {/* Display the weather description */}
-        <p>{capitalizeFirstLetter(weather.weather[0].description)}</p>
+        <p>
+          {" "}
+          <b> {capitalizeFirstLetter(weather.weather[0].description)}</b>
+        </p>
       </div>
       <div className="weather-details">
         <div>
           {/* Display temperature with units based on selected system */}
           <p className="weather-detail">
-            Temperature: {convertCelsiusToFahrenheit(weather.main.temp, units)}{" "}
+            Temperature:{" "}
+            <b> {convertCelsiusToFahrenheit(weather.main.temp, units)} </b>
           </p>
           {/* Display humidity percentage */}
-          <p className="weather-detail">Humidity: {weather.main.humidity}%</p>
+          <p className="weather-detail">
+            Humidity: <b> {weather.main.humidity}% </b>
+          </p>
           {/* Display wind speed with converted units */}
           <p className="weather-detail">
-            Wind Speed: {convertWindSpeed(weather.wind.speed, units)}
+            Wind Speed: <b> {convertWindSpeed(weather.wind.speed, units)}</b>
           </p>
           {/* Display rain amount if available */}
           {hasRain && (
-            <p className="weather-detail">Rain: {weather.rain["1h"]} mm</p>
+            <p className="weather-detail">
+              Rain: <b> {weather.rain["1h"]} mm</b>
+            </p>
           )}
         </div>
       </div>
