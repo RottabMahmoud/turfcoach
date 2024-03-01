@@ -38,7 +38,7 @@ const CityImage = ({ city }) => {
     };
 
     // Call the fetchImage function when the city prop changes
-    fetchImage();
+    // fetchImage();
   }, [city]);
 
   // Render the component with the city image if imageUrl is available

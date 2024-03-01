@@ -87,14 +87,11 @@ const WeatherInfo = () => {
                   Remove from Favorites
                 </button>
               )}
-            </div>
-
-            {/* Unit selector for temperature units */}
-            <div className="unit-selector">
-              <h3>Unit Selector:</h3>
+              {/* Unit selector for temperature units */}
               <select
                 value={units}
                 onChange={(e) => handleUnitChange(e.target.value)}
+                className="m-3"
               >
                 <option value="metric">Metric (Celsius)</option>
                 <option value="imperial">Imperial (Fahrenheit)</option>
@@ -104,7 +101,7 @@ const WeatherInfo = () => {
         )}
 
         {/* Favorites section */}
-        <div className="favorites">
+        <div className="favorites text-white">
           <h3>Your Favorites:</h3>
           <ul>
             {/* Display list of favorite cities with remove button */}
@@ -112,7 +109,11 @@ const WeatherInfo = () => {
               <li>No favorites added yet.</li>
             ) : (
               favorites.map((city) => (
-                <li key={city}>
+                <li
+                  className="hover:cursor-pointer hover:font-bold hover:text-blue-500"
+                  onClick={() => getWeather(city)}
+                  key={city}
+                >
                   {city}
                   <button
                     onClick={() => removeFromFavorites(city)}
