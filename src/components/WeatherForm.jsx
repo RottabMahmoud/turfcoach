@@ -30,17 +30,23 @@ const WeatherForm = ({ getWeather }) => {
 
   // Render the weather form component
   return (
-    <form onSubmit={handleSubmit} className="weather-form">
+    <form
+      onSubmit={handleSubmit}
+      className="flex items-center justify-center mt-8"
+    >
       {/* Input field for location */}
       <input
         type="text"
         placeholder="Enter city"
         value={location}
         onChange={(e) => setLocation(e.target.value)} // Update location state on input change
-        className="weather-input"
+        className="border border-gray-300 rounded-md px-4 py-2 mr-2 focus:outline-none focus:border-blue-500"
       />
       {/* Button to submit form */}
-      <button type="submit" className="weather-button">
+      <button
+        type="submit"
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+      >
         Get Weather
       </button>
     </form>
