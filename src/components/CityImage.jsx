@@ -28,7 +28,7 @@ const CityImage = ({ city }) => {
     const fetchImage = async () => {
       try {
         const response = await fetch(
-          `https://api.unsplash.com/photos/random?query=${city}&client_id=MbPxt2xTQLaoIn99ANA7AlJ3n-d1rK57uC-eneN0Ixs`
+          `https://api.unsplash.com/photos/random?query=${city}&client_id=ojK9CwxzamZTjjzhu_qzC2vkq6-KM1S11dbIsnVFj2A`
         );
         const data = await response.json();
         setImageUrl(data.urls.regular);
