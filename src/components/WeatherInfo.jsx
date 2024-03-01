@@ -61,74 +61,74 @@ const WeatherInfo = () => {
 
   // Render the weather information component
   return (
-    <div className="weather-info">
-      {/* WeatherForm component for inputting location */}
-      <WeatherForm getWeather={getWeather} />
+    <div className="flex">
+      <div className="weather-info w-1/2">
+        {/* WeatherForm component for inputting location */}
+        <WeatherForm getWeather={getWeather} />
 
-      {/* Display current weather information if available */}
-      {weather && (
-        <div className="current-weather">
-          {/* WeatherCard component to display current weather */}
-          <WeatherCard weather={weather} units={units} />
+        {/* Display current weather information if available */}
+        {weather && (
+          <div className="current-weather">
+            {/* WeatherCard component to display current weather */}
+            <WeatherCard weather={weather} units={units} />
 
-          {/* Weather actions section */}
-          <div className="weather-actions">
-            {/* Button to add current location to favorites */}
-            <button onClick={addToFavorites} className="add-favorite-btn">
-              Add to Favorites
-            </button>
-            {/* Button to remove current location from favorites */}
-            {favorites.includes(weather.name) && (
-              <button
-                onClick={() => removeFromFavorites(weather.name)}
-                className="remove-favorite-btn"
-              >
-                Remove from Favorites
+            {/* Weather actions section */}
+            <div className="weather-actions">
+              {/* Button to add current location to favorites */}
+              <button onClick={addToFavorites} className="add-favorite-btn">
+                Add to Favorites
               </button>
-            )}
-          </div>
-
-          {/* Unit selector for temperature units */}
-          <div className="unit-selector">
-            <h3>Unit Selector:</h3>
-            <select
-              value={units}
-              onChange={(e) => handleUnitChange(e.target.value)}
-            >
-              <option value="metric">Metric (Celsius)</option>
-              <option value="imperial">Imperial (Fahrenheit)</option>
-            </select>
-          </div>
-
-          {/* Display city image using CityImage component */}
-          <div className="city-image">
-            <h3>City Image:</h3>
-            <CityImage city={weather.name} />
-          </div>
-        </div>
-      )}
-
-      {/* Favorites section */}
-      <div className="favorites">
-        <h3>Your Favorites:</h3>
-        <ul>
-          {/* Display list of favorite cities with remove button */}
-          {favorites.length === 0 ? (
-            <li>No favorites added yet.</li>
-          ) : (
-            favorites.map((city) => (
-              <li key={city}>
-                {city}
+              {/* Button to remove current location from favorites */}
+              {favorites.includes(weather.name) && (
                 <button
-                  onClick={() => removeFromFavorites(city)}
+                  onClick={() => removeFromFavorites(weather.name)}
                   className="remove-favorite-btn"
                 >
-                  Remove
+                  Remove from Favorites
                 </button>
-              </li>
-            ))
-          )}
-        </ul>
+              )}
+            </div>
+
+            {/* Unit selector for temperature units */}
+            <div className="unit-selector">
+              <h3>Unit Selector:</h3>
+              <select
+                value={units}
+                onChange={(e) => handleUnitChange(e.target.value)}
+              >
+                <option value="metric">Metric (Celsius)</option>
+                <option value="imperial">Imperial (Fahrenheit)</option>
+              </select>
+            </div>
+          </div>
+        )}
+
+        {/* Favorites section */}
+        <div className="favorites">
+          <h3>Your Favorites:</h3>
+          <ul>
+            {/* Display list of favorite cities with remove button */}
+            {favorites.length === 0 ? (
+              <li>No favorites added yet.</li>
+            ) : (
+              favorites.map((city) => (
+                <li key={city}>
+                  {city}
+                  <button
+                    onClick={() => removeFromFavorites(city)}
+                    className="remove-favorite-btn"
+                  >
+                    Remove
+                  </button>
+                </li>
+              ))
+            )}
+          </ul>
+        </div>
+      </div>
+      {/* Display city image using CityImage component */}
+      <div className="w-1/2">
+        <CityImage city={weather.name} />
       </div>
     </div>
   );

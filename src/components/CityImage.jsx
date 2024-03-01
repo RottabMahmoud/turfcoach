@@ -13,7 +13,7 @@ const CityImage = ({ city }) => {
   // Style for the city image
   const imageStyle = {
     width: "100%",
-    maxHeight: "200px", // Adjust the height as needed
+    height: "51.9em",
     objectFit: "cover",
     borderRadius: "8px",
     boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
@@ -44,7 +44,7 @@ const CityImage = ({ city }) => {
   // Render the component with the city image if imageUrl is available
   return (
     <div style={{ maxWidth: "100%" }}>
-      {imageUrl && <img src={imageUrl} alt={city} style={imageStyle} />}
+      {imageUrl && <img src="src\components\cairo.png" alt={city} style={imageStyle} />}
     </div>
   );
 };
