@@ -62,7 +62,7 @@ const WeatherInfo = () => {
   // Render the weather information component
   return (
     <div className="flex">
-      <div className="weather-info w-1/2">
+      <div className="weather-info w-1/4">
         {/* WeatherForm component for inputting location */}
         <WeatherForm getWeather={getWeather} />
 
@@ -120,7 +120,7 @@ const WeatherInfo = () => {
         </div>
       </div>
       {/* Display city image using CityImage component */}
-      <div className="w-1/2 hidden sm:block">
+      <div className="w-3/4 hidden sm:block">
         {weather && <CityImage city={weather.name} />}
       </div>
     </div>
