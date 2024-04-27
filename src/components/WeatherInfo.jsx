@@ -1,7 +1,7 @@
 import { useState } from "react";
 import WeatherCard from "./WeatherCard";
-import WeatherForm from "./WeatherForm";
 import CityImage from "./CityImage";
+import WeatherForm from "./WeatherForm";
 
 /**
  * Component to display weather information, weather form, favorites, and city image.
